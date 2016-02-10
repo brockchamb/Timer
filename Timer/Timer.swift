@@ -10,13 +10,25 @@ import UIKit
 
 class Timer: NSObject {
     
-    var isOn: Bool
+    
+    static let notifySecondTick = "Notify Second Tick"
+    static let notifyComplete = "Nofity Complete"
     
     private(set) var seconds = NSTimeInterval(0)
     private(set) var totalSeconds = NSTimeInterval(0)
     private var timer: NSTimer?
     
-    var timerDisplay: String {
+    var isOn: Bool{
+        get{
+            if timer != nil{
+                return true
+            }else{
+                return false
+            }
+        }
+    }
+    
+    var string: String {
         get {
             let totalSeconds = Int(self.seconds)
             
@@ -55,7 +67,7 @@ class Timer: NSObject {
     
     func startTimer() {
         if !isOn {
-            timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: <#T##Selector#>, userInfo: nil, repeats: true)
+            timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "secondTick", userInfo: nil, repeats: true)
         }
     }
     
@@ -69,9 +81,9 @@ class Timer: NSObject {
     
     func secondTick() {
         seconds--
-        NSNotificationCenter.defaultCenter().postNotificationName("secondTick", object: self)
+        NSNotificationCenter.defaultCenter().postNotificationName(Timer.notifySecondTick, object: self)
         if seconds <= 0 {
-            NSNotificationCenter.defaultCenter().postNotificationName("timerStopped", object: self)
+            NSNotificationCenter.defaultCenter().postNotificationName(Timer.notifyComplete, object: self)
             stopTimer()
         }
     }

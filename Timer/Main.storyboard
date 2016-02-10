@@ -29,13 +29,46 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cUB-CH-Ikc">
+                                                <rect key="frame" x="0.0" y="67" width="600" height="117"/>
+                                                <subviews>
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="vGP-bG-Hda">
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="117"/>
+                                                        <date key="date" timeIntervalSinceReferenceDate="476749521.92398298">
+                                                            <!--2016-02-09 22:25:21 +0000-->
+                                                        </date>
+                                                    </datePicker>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ks7-ie-GaE">
+                                                        <rect key="frame" x="150" y="0.0" width="150" height="117"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Wm7-8P-r4q">
+                                                        <rect key="frame" x="300" y="0.0" width="150" height="117"/>
+                                                        <date key="date" timeIntervalSinceReferenceDate="476749608.81064498">
+                                                            <!--2016-02-09 22:26:48 +0000-->
+                                                        </date>
+                                                    </datePicker>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeV-Ym-3ZQ">
+                                                        <rect key="frame" x="450" y="0.0" width="150" height="117"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SIa-u0-mn4">
                                                 <rect key="frame" x="0.0" y="73" width="600" height="2"/>
                                             </progressView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="cUB-CH-Ikc" firstAttribute="top" secondItem="PAK-C9-AWD" secondAttribute="top" constant="67" id="8VB-I0-POX"/>
                                             <constraint firstItem="SIa-u0-mn4" firstAttribute="leading" secondItem="PAK-C9-AWD" secondAttribute="leading" id="BhQ-E9-hVb"/>
+                                            <constraint firstAttribute="bottom" secondItem="cUB-CH-Ikc" secondAttribute="bottom" id="F0y-sP-dKf"/>
+                                            <constraint firstItem="cUB-CH-Ikc" firstAttribute="leading" secondItem="PAK-C9-AWD" secondAttribute="leading" id="IlE-00-4N6"/>
+                                            <constraint firstAttribute="trailing" secondItem="cUB-CH-Ikc" secondAttribute="trailing" id="U5L-Sq-fmg"/>
                                             <constraint firstItem="SIa-u0-mn4" firstAttribute="top" secondItem="PAK-C9-AWD" secondAttribute="top" constant="73" id="Ytz-NM-MmR"/>
                                             <constraint firstItem="gcx-PX-qg7" firstAttribute="leading" secondItem="PAK-C9-AWD" secondAttribute="leadingMargin" id="fo3-Yi-tIL"/>
                                             <constraint firstAttribute="trailing" secondItem="SIa-u0-mn4" secondAttribute="trailing" id="iHj-Uq-NiY"/>
@@ -64,7 +97,7 @@
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="miO-GN-kp2">
                                                         <rect key="frame" x="360" y="0.0" width="120" height="138"/>
-                                                        <state key="normal" title="Cancel"/>
+                                                        <state key="normal" title="Start"/>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Khy-6K-Oyb">
                                                         <rect key="frame" x="480" y="0.0" width="120" height="138"/>
@@ -102,6 +135,33 @@
             </objects>
             <point key="canvasLocation" x="1944" y="410"/>
         </scene>
+        <!--Alarm View Controller-->
+        <scene sceneID="8ql-ap-E94">
+            <objects>
+                <viewController id="U0N-5A-Qfh" customClass="AlarmViewController" customModule="Timer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XWr-BD-KUz"/>
+                        <viewControllerLayoutGuide type="bottom" id="GM9-Nl-kqO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fg4-m3-BLn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alarm View Controller" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e33-Pd-lvu">
+                                <rect key="frame" x="169" y="289" width="262" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DNa-HQ-Tpm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7cO-jg-9DL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1944" y="1072"/>
+        </scene>
         <!--Item-->
         <scene sceneID="cv8-z1-Zi4">
             <objects>
@@ -132,11 +192,31 @@
                     </tabBar>
                     <connections>
                         <segue destination="bdH-Gf-hJ0" kind="relationship" relationship="viewControllers" id="WiJ-fY-GU6"/>
+                        <segue destination="mOb-N5-hNg" kind="relationship" relationship="viewControllers" id="yzW-CO-9Mc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JzX-ku-8jH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="599" y="410"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="WdF-B1-1SG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mOb-N5-hNg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="5Fw-fM-1RN"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="orL-TK-m5p">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="U0N-5A-Qfh" kind="relationship" relationship="rootViewController" id="eRX-jF-s8a"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tf4-C1-BbO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1266" y="1072"/>
         </scene>
     </scenes>
 </document>

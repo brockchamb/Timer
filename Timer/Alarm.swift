@@ -14,7 +14,7 @@ class Alarm: NSObject {
     static let notificationComplete = "notificationComplete"
     
     private(set) var alarmDate: NSDate?
-    private(set) var alarmTime: NSTimeInterval
+    
     
     
     private var localNotification: UILocalNotification?

@@ -165,16 +165,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alarm View Controller" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e33-Pd-lvu">
-                                <rect key="frame" x="169" y="289" width="262" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="JeY-2H-Ba3">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ruy-tu-MOF">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="123"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="476847510.98442602">
+                                            <!--2016-02-11 01:38:30 +0000-->
+                                        </date>
+                                    </datePicker>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKG-n7-aLv">
+                                        <rect key="frame" x="0.0" y="123" width="600" height="123"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOK-Wq-ctD">
+                                        <rect key="frame" x="0.0" y="246" width="600" height="123"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nc8-DH-Du1">
+                                        <rect key="frame" x="0.0" y="369" width="600" height="123"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JeY-2H-Ba3" firstAttribute="top" secondItem="XWr-BD-KUz" secondAttribute="bottom" id="7T9-S6-eRl"/>
+                            <constraint firstItem="JeY-2H-Ba3" firstAttribute="leading" secondItem="Fg4-m3-BLn" secondAttribute="leading" id="gsQ-lw-1tN"/>
+                            <constraint firstAttribute="trailing" secondItem="JeY-2H-Ba3" secondAttribute="trailing" id="jFY-vK-2Yo"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="JeY-2H-Ba3" secondAttribute="bottom" constant="44" id="x99-aU-5UK"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DNa-HQ-Tpm"/>
+                    <connections>
+                        <outlet property="alarmButtonTapped" destination="Nc8-DH-Du1" id="g3S-HJ-IaE"/>
+                        <outlet property="alarmDateLabel" destination="jKG-n7-aLv" id="noG-U3-d1O"/>
+                        <outlet property="alarmDatePicker" destination="ruy-tu-MOF" id="pbm-BB-PLq"/>
+                        <outlet property="alarmStatus" destination="ZOK-Wq-ctD" id="Mih-S2-aYM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7cO-jg-9DL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

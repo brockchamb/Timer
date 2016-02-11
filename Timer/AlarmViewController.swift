@@ -21,6 +21,8 @@ class AlarmViewController: UIViewController {
         super.viewDidLoad()
         
         alarmDatePicker.minimumDate = NSDate()
+        alarmSet()
+        alarmNotSet()
         
         
         
@@ -48,14 +50,21 @@ class AlarmViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func alarmButtonTapped(sender: AnyObject) {
+        if alarm.isArmed {
+            alarm.cancel()
+            alarmNotSet()
+        } else {
+            armAlarm()
+        }
+    }
     
+    func armAlarm() {
+        alarm.arm(alarmDatePicker.date)
+        alarmSet()
+    }
     
-    
-    
-    
-    
-        
-        func alarmSet() {
+    func alarmSet() {
             let dateFormatter = NSDateFormatter()
             dateFormatter.timeStyle = .ShortStyle
             dateFormatter.dateStyle = .LongStyle

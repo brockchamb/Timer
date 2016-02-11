@@ -189,6 +189,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nc8-DH-Du1">
                                         <rect key="frame" x="0.0" y="369" width="600" height="123"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="alarmButtonTapped:" destination="U0N-5A-Qfh" eventType="touchUpInside" id="kwr-lF-Kso"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

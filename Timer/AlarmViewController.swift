@@ -12,6 +12,8 @@ class AlarmViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "notificationComplete", name: Alarm.notificationComplete, object: nil)
 
         // Do any additional setup after loading the view.
     }

@@ -16,6 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        AppearanceController.initializeAppearanceDefaults()
+        
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil))
                 
         return true
     }
@@ -36,7 +40,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-
+        
+        if notification.category == Alarm.categoryAlarm {
+            let alarmAlert = UIAlertController(title: "Alarm", message: "Time to wake up", preferredStyle: .Alert)
+            alarmAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            
+            window?.rootViewController?.presentViewController(alarmAlert, animated: true, completion: nil)
+            Alarm.alarmComplete()
+        }
+        
     }
     
     func applicationWillTerminate(application: UIApplication) {

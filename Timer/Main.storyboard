@@ -130,7 +130,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Gbx-Ap-KEq" firstAttribute="leading" secondItem="j46-D4-dcZ" secondAttribute="leading" id="0Yq-yk-6Qu"/>
                             <constraint firstItem="Gbx-Ap-KEq" firstAttribute="bottom" secondItem="JIq-ph-kQM" secondAttribute="top" id="Q7w-me-Hyq"/>
@@ -180,11 +180,11 @@
             </objects>
             <point key="canvasLocation" x="1944" y="1072"/>
         </scene>
-        <!--Item-->
+        <!--Timer-->
         <scene sceneID="cv8-z1-Zi4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bdH-Gf-hJ0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="9fu-sn-p7n"/>
+                    <tabBarItem key="tabBarItem" title="Timer" image="timer" selectedImage="timer" id="9fu-sn-p7n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KYf-du-f8H">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -217,11 +217,11 @@
             </objects>
             <point key="canvasLocation" x="599" y="410"/>
         </scene>
-        <!--Item-->
+        <!--Alarm-->
         <scene sceneID="WdF-B1-1SG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mOb-N5-hNg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="5Fw-fM-1RN"/>
+                    <tabBarItem key="tabBarItem" title="Alarm" image="alarm" selectedImage="alarm" id="5Fw-fM-1RN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="orL-TK-m5p">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -237,4 +237,8 @@
             <point key="canvasLocation" x="1266" y="1072"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="alarm" width="25" height="25"/>
+        <image name="timer" width="25" height="25"/>
+    </resources>
 </document>

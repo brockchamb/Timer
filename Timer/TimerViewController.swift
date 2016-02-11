@@ -32,6 +32,9 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        switchToPicker()
+        
+        
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateTimerBasedViews" , name: Timer.notifySecondTick , object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "timerComplete", name: Timer.notifyComplete, object: nil)
@@ -67,6 +70,7 @@ class TimerViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
